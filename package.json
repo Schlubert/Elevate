@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/Schlubert/Elevate.git",
   "name": "elevate-management-solutions",
   "version": "1.0.0",
   "private": true,
@@ -6,6 +7,8 @@
   "author": "Kevin & Esther Gilbert",
   "license": "MIT",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
@@ -27,6 +30,7 @@
     "eslint": "^9.9.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.34.1",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.5.6",
     "prettier": "^3.3.3",
     "tailwindcss": "^3.4.18",
