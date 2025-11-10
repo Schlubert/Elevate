@@ -1,4 +1,4 @@
-// untils/paths.ts
+// utils/paths.ts
 export const getAssetPath = (path: string) => {
   const basePath = import.meta.env.BASE_URL || '/';
   // Remove leading slash from path if present

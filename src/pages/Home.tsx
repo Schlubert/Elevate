@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Play } from "lucide-react";
-import { getImagePath } from '../utils/paths';
+import { getImagePath } from '@/utils/paths';
 
 const Home: React.FC = () => {
   const [mediaType, setMediaType] = useState<'image' | 'video'>('image');
