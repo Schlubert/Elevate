@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { Play } from "lucide-react";
+import { getImagePath } from '../utils/paths';
 
 const Home: React.FC = () => {
   const [mediaType, setMediaType] = useState<'image' | 'video'>('image');
@@ -31,7 +32,7 @@ const Home: React.FC = () => {
               ) : (
                 <div className="relative rounded-lg overflow-hidden shadow-2xl group">
                   <img
-                    src="/hero-image.jpg"
+                    src={getImagePath('hero-image.jpg')}
                     alt="Elevate Management Solutions - Leadership and Team Development"
                     className="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-500"
                   />

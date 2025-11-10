@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
+import { getImagePath } from '../utils/paths';
 
 interface SubLink {
   href: string;
@@ -66,7 +67,7 @@ const NAV_LINKS: NavItem[] = [
 const Logo: React.FC = () => (
   <div className="flex items-center">
     <img 
-      src="../public/elevate-logo2.png" 
+      src={getImagePath('elevate-logo2.png')} 
       alt="Elevate Management Solutions" 
       className="h-16 w-auto"
     />
