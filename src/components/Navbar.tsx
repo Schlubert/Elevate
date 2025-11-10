@@ -66,7 +66,7 @@ const NAV_LINKS: NavItem[] = [
 const Logo: React.FC = () => (
   <div className="flex items-center">
     <img 
-      src="./elevate-logo2.png" 
+      src="elevate-logo2.png" 
       alt="Elevate Management Solutions" 
       className="h-16 w-auto"
     />
