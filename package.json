@@ -1,0 +1,36 @@
+{
+  "name": "elevate-management-solutions",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Elevate Management Solutions — business and leadership consulting website built with React, TypeScript, and Tailwind CSS.",
+  "author": "Kevin & Esther Gilbert",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .ts,.tsx --report-unused-disable-directives --max-warnings 0",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "lucide-react": "^0.546.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.9.1",
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.2",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.9.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-react": "^7.34.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.6.3",
+    "vite": "^7.1.11"
+  }
+}

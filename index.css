@@ -1,0 +1,70 @@
+/* src/index.css */
+
+/* Tailwind base imports (Tailwind must be installed and configured) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Brand tokens (from theme.ts). These CSS variables make it easy to reference colours in inline SVG and plain CSS. */
+:root {
+  --brand-50: #E6F7ED;
+  --brand-100: #CFF1DB;
+  --brand-200: #9FDFB6;
+  --brand-300: #6FC791;
+  --brand-400: #3FB46C;
+  --brand-500: #0FA047;
+  --brand-600: #0C8C3E;
+  --brand-700: #0A6F31;
+  --brand-800: #084D24;
+  --accent: #F28C2B;
+  --muted: #6B7280;
+  --bg: #FFFFFF;
+}
+
+/* Basic global styles */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: #111827;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Utility-like helpers that complement Tailwind */
+.container {
+  max-width: 1100px;
+}
+
+/* Simple accessible focus state */
+:focus {
+  outline: 3px solid var(--brand-200);
+  outline-offset: 2px;
+}
+
+/* Button defaults that match brand */
+.btn-brand {
+  background-color: var(--brand-600);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+}
+.btn-brand:hover {
+  background-color: var(--brand-700);
+}
+
+/* Make sure SVG logos inherit CSS var colours when used inline */
+svg [fill^="var("] {
+  /* no-op; ensures editors keep var() usage */
+}
+
+/* Responsive tweaks for main content area */
+main {
+  min-height: calc(100vh - 160px); /* account for header/footer */
+}
