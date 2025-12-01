@@ -20,7 +20,7 @@ const Hospitality: React.FC = () => {
 
   const challenges: Challenge[] = [
     {
-      title: "Labor Challenges",
+      title: "Staffing Challenges",
       description: "Finding, training, and retaining quality staff in a high-turnover industry with thin margins"
     },
     {
@@ -32,8 +32,8 @@ const Hospitality: React.FC = () => {
       description: "Managing multiple revenue streams, peak demand fluctuations, and complex operations"
     },
     {
-      title: "Digital Transformation",
-      description: "Integrating technology for bookings, operations, and guest experience while maintaining personal touch"
+      title: "Sustainability integration",
+      description: "Incorporating eco-friendly practices without compromising guest experience or profitability"
     }
   ];
 
@@ -247,8 +247,8 @@ const Hospitality: React.FC = () => {
                   description: "Implement systems and structures that maintain quality and consistency across multiple properties or locations"
                 },
                 { 
-                  title: "Digital Guest Experience", 
-                  description: "Integrate technology—booking systems, guest apps, contactless service—while maintaining personal hospitality touch"
+                  title: "Sustainability Strategies", 
+                  description: "Integrate eco-friendly practices into operations that reduce costs and appeal to environmentally conscious guests"
                 }
               ].map((service, index) => (
                 <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
@@ -270,12 +270,10 @@ const Hospitality: React.FC = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                "10-20% improvement in guest satisfaction scores",
-                "15-30% reduction in staff turnover",
-                "5-15% increase in revenue per available room/seat",
-                "20-40% improvement in online review ratings",
-                "Reduced labor costs through improved productivity",
-                "Higher direct booking rates and reduced OTA dependence",
+                "Notable improvement in guest satisfaction scores",
+                "Reduction in staff turnover",
+                "Increase in revenue per available room/seat",
+                "Reduced labour costs through improved productivity",
                 "Improved food cost percentages and kitchen efficiency",
                 "Stronger team culture and employee engagement"
               ].map((item, index) => (
@@ -286,7 +284,7 @@ const Hospitality: React.FC = () => {
               ))}
             </div>
             <p className="text-center text-gray-300 mt-8 italic">
-              Results vary based on starting point and engagement scope. These represent typical improvements from our hospitality work.
+              Results vary based on starting point and engagement scope. We tailor our approach to your unique hospitality business needs.
             </p>
           </div>
         </div>
@@ -352,8 +350,8 @@ const Hospitality: React.FC = () => {
                   <li>• Restaurants & Cafes</li>
                   <li>• Bars & Pubs</li>
                   <li>• Catering Services</li>
-                  <li>• Food Halls & Markets</li>
                   <li>• Event Venues</li>
+                  
                 </ul>
               </div>
               <div>

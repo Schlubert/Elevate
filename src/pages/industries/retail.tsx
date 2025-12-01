@@ -123,15 +123,15 @@ const Retail: React.FC = () => {
             </h2>
             <div className="prose prose-lg max-w-none text-gray-700">
               <p className="text-xl mb-6">
-                Drawing on extensive customer service and operational experience from hospitality, Kevin and Esther bring deep understanding of what it takes to create exceptional consumer experiences across retail and service environments.
+                Drawing on extensive customer service and operational experience from hospitality and their own retail stores, Kevin and Esther bring deep understanding of what it takes to create exceptional consumer experiences across retail and service environments.
               </p>
               <p className="mb-4">
-                The principles of great hospitality—anticipating needs, personalizing service, creating emotional connection, and operational excellence—translate powerfully to retail and consumer services. We help you apply these principles to build businesses customers love.
+                The principles of great hospitality and service — anticipating needs, personalizing service, creating genuine connection, and operational excellence — translate powerfully to retail and consumer services. We help you apply these principles to build businesses customers love.
               </p>
               <div className="bg-gray-50 p-6 rounded-lg mt-6">
                 <h3 className="text-xl font-bold text-[#0B6E4F] mb-3">Cross-Industry Expertise</h3>
                 <p className="text-gray-700 mb-3">
-                  While our hospitality background is extensive, we've successfully applied customer experience principles across diverse retail and service sectors:
+                  We don't just talk it, we've lived it. While our hospitality background is extensive, we've successfully applied customer experience principles across  retail and service sectors:
                 </p>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
@@ -255,13 +255,13 @@ const Retail: React.FC = () => {
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                "5-15% improvement in conversion rates",
-                "10-25% increase in average transaction value",
-                "15-30% improvement in customer satisfaction scores",
-                "20-40% reduction in staff turnover",
+                "Improvement in conversion rates",
+                "Increase in average transaction value",
+                "Improvement in customer satisfaction scores",
+                "Reduction in staff turnover",
                 "Improved inventory turns and reduced markdowns",
                 "Higher customer lifetime value and repeat purchase rates",
-                "Better staff productivity and sales per hour",
+                "Better staff productivity",
                 "Stronger competitive positioning and brand loyalty"
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -271,7 +271,7 @@ const Retail: React.FC = () => {
               ))}
             </div>
             <p className="text-center text-gray-300 mt-8 italic">
-              Results vary based on starting point and engagement scope. These represent typical improvements from our retail work.
+              Results vary based on starting point and engagement scope. We tailor solutions to your unique needs.
             </p>
           </div>
         </div>
