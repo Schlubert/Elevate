@@ -8,11 +8,11 @@ const Header: React.FC = () => {
         {/* Left side - Quick contact */}
         <div className="flex items-center gap-6">
           <a 
-            href="tel:+642748569001" 
+            href="tel:+64274859001" 
             className="flex items-center gap-2 hover:text-[#6BA94D] transition-colors"
           >
             <Phone size={16} />
-            <span className="hidden sm:inline">+64 21 234 567</span>
+            <span className="hidden sm:inline">+64 27 485 9001</span>
           </a>
           <a 
             href="mailto:info@elevates.nz" 
