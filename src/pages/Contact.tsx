@@ -220,7 +220,7 @@ const Contact: React.FC = () => {
                             value={formData.phone}
                             onChange={handleChange}
                             className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-[#6BA94D] transition-colors"
-                            placeholder="+64 21 234 5678"
+                            placeholder="+64 27 485 9001"
                           />
                         </div>
 
