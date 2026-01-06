@@ -49,10 +49,10 @@ const Home: React.FC = () => {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="/contact" className="bg-[#0B6E4F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#6BA94D] transition-colors shadow-lg">
+                <a href="/Contact" className="bg-[#0B6E4F] text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#6BA94D] transition-colors shadow-lg">
                   Get Started
                 </a>
-                <a href="/expertise" className="border-2 border-[#0B6E4F] text-[#0B6E4F] px-8 py-3 rounded-lg font-semibold hover:bg-[#0B6E4F] hover:text-white transition-colors">
+                <a href="/Expertise" className="border-2 border-[#0B6E4F] text-[#0B6E4F] px-8 py-3 rounded-lg font-semibold hover:bg-[#0B6E4F] hover:text-white transition-colors">
                   Our Services
                 </a>
               </div>
