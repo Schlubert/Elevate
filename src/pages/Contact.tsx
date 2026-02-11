@@ -15,26 +15,54 @@ const Contact: React.FC = () => {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In production, this would send to your backend/email service
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    
-    // Reset form after 3 seconds
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        industry: "",
-        message: "",
-        howDidYouHear: ""
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "e5e7c81e-5365-4db8-8167-b04c5894204d",
+          subject: "New Contact Form Submission - Elevate Management",
+          from_name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          industry: formData.industry,
+          message: formData.message,
+          how_did_you_hear: formData.howDidYouHear,
+          to_email: "info@elevates.nz"
+        }),
       });
-    }, 3000);
+
+      const result = await response.json();
+      
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          company: "",
+          industry: "",
+          message: "",
+          howDidYouHear: ""
+        });
+
+        setTimeout(() => setSubmitted(false), 5000);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an error submitting the form. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -82,8 +110,8 @@ const Contact: React.FC = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                      <a href="mailto:office@elevatemanagement.co.nz" className="text-[#0B6E4F] hover:underline text-lg">
-                        office@elevatemanagement.co.nz
+                      <a href="mailto:info@elevates.nz" className="text-[#0B6E4F] hover:underline text-lg">
+                        info@elevates.nz
                       </a>
                     </div>
                   </div>
@@ -138,7 +166,7 @@ const Contact: React.FC = () => {
                   <ul className="space-y-3 text-gray-600">
                     <li className="flex items-start gap-2">
                       <CheckCircle className="text-[#6BA94D] flex-shrink-0 mt-0.5" size={18} />
-                      <span>We'll respond within 24 hours on business days</span>
+                      <span>We'll respond within 48 hours on business days</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <CheckCircle className="text-[#6BA94D] flex-shrink-0 mt-0.5" size={18} />
@@ -299,9 +327,10 @@ const Contact: React.FC = () => {
 
                       <button
                         type="submit"
-                        className="w-full bg-[#0B6E4F] text-white py-4 px-6 rounded-lg font-semibold hover:bg-[#6BA94D] transition-colors shadow-lg flex items-center justify-center gap-2 text-lg"
+                        disabled={isSubmitting}
+                        className="w-full bg-[#0B6E4F] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#6BA94D] transition-colors shadow-lg disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        Send Message <Send size={20} />
+                        {isSubmitting ? "Sending..." : "Send Message"}
                       </button>
 
                       <p className="text-sm text-gray-500 text-center">
@@ -341,7 +370,7 @@ const Contact: React.FC = () => {
                 <h3 className="font-bold text-gray-900 mb-2">Email Directly</h3>
                 <p className="text-gray-600 mb-4">Send us an email and we'll respond promptly.</p>
                 <a href="mailto:office@elevatemanagement.co.nz" className="text-[#0B6E4F] font-semibold hover:underline break-all">
-                  office@elevatemanagement.co.nz
+                  info@elevates.nz
                 </a>
               </div>
 
