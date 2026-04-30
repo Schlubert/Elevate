@@ -47,7 +47,6 @@ const NAV_LINKS: NavItem[] = [
       { href: '/industries/retail', label: 'Retail & Consumer Services' },
       { href: '/industries/professional-services', label: 'Professional Services' },
       { href: '/industries/not-for-profit', label: 'Not-for-Profit' },
-      { href: '/industries/manufacturing', label: 'Manufacturing & Logistics' },
     ]
   },
   { 
