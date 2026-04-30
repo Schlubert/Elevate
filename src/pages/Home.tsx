@@ -46,7 +46,8 @@ const Home: React.FC = () => {
                 Elevate Management Solutions
               </h1>
               <p className="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
-                We help organisations develop confident, capable leaders and strong, cohesive teams.
+                We help organisations develop confident, capable leaders and build strong, cohesive teams.
+We work alongside you to strengthen processes, improve performance, and navigate challenges as they arise — providing practical guidance, accountability, and an experienced sounding board when it matters most.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
