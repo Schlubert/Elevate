@@ -284,7 +284,6 @@ const Contact: React.FC = () => {
                           <option value="retail">Retail & Consumer Services</option>
                           <option value="professional">Professional Services</option>
                           <option value="nonprofit">Not-for-Profit</option>
-                          <option value="manufacturing">Manufacturing & Logistics</option>
                           <option value="other">Other</option>
                         </select>
                       </div>

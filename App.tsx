@@ -28,7 +28,6 @@ import SustainablePractices from "./src/pages/expertise/sustainable-practices";
 
 // Industries subpages
 import Hospitality from "./src/pages/industries/hospitality";
-import Manufacturing from "./src/pages/industries/manufacturing";
 import NotForProfit from "./src/pages/industries/not-for-profit";
 import ProfessionalServices from "./src/pages/industries/professional-services";
 import Retail from "./src/pages/industries/retail";
@@ -62,7 +61,6 @@ function App() {
         <Route path="/expertise/strategic-planning" element={<StrategicPlanning />} />
         <Route path="/expertise/sustainable-practices" element={<SustainablePractices />} />
         <Route path="/industries/hospitality" element={<Hospitality />} />
-        <Route path="/industries/manufacturing" element={<Manufacturing />} />
         <Route path="/industries/not-for-profit" element={<NotForProfit />} />
         <Route path="/industries/professional-services" element={<ProfessionalServices />} />
         <Route path="/industries/retail" element={<Retail />} />
