@@ -125,19 +125,19 @@ const Navbar: React.FC = () => {
                   </button>
                 ) : (
                   <NavLink
-                    to={link.href}
-                    className={({ isActive }) =>
-                      `block px-3 py-2 text-base font-semibold transition-colors duration-300 ${
-                        isActive
-                          ? 'text-[#0B6E4F] border-b-2 border-[#6BA94D]'
-                          : 'text-gray-700 hover:text-[#0B6E4F]'
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
+  to={link.href}
+  className={({ isActive }) =>
+    `flex items-center gap-1 px-3 py-2 text-base font-semibold transition-colors duration-300 ${
+      isActive || activeDropdown === link.label
+        ? 'text-[#0B6E4F]'
+        : 'text-gray-700 hover:text-[#0B6E4F]'
+    }`
+  }
+>
+  {link.label}
+  <ChevronDown size={16} className={`transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+</NavLink>
                 )}
-
                 {/* Dropdown Menu */}
                 {link.subLinks && activeDropdown === link.label && (
                   <div className="absolute top-full left-0 mt-0 w-72 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">

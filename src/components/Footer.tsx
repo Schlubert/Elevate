@@ -1,6 +1,7 @@
 // src/components/Footer.tsx
 import React from "react";
 import { Link } from "react-router-dom";
+import { getImagePath } from '../utils/paths';
 
 const Footer: React.FC = () => {
   return (
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="md:col-span-1">
             <Link to="/" className="inline-block mb-4">
               <img 
-                src="/elevate-logo2.png" 
+                src={getImagePath('elevate-logo2.png')} 
                 alt="Elevate Management Solutions" 
                 className="h-10 w-auto brightness-0 invert"
               />
