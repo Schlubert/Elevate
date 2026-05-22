@@ -11,11 +11,11 @@ interface ProcessStep {
   deliverables: string[];
 }
 
-interface Benefit {
-  icon: React.ReactNode;
+type Benefit = {
+  image: string;
   title: string;
   description: string;
-}
+};
 
 const StrategicPlanning: React.FC = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
@@ -47,28 +47,32 @@ const StrategicPlanning: React.FC = () => {
     }
   ];
 
-  const benefits: Benefit[] = [
-    {
-      icon: <Target className="text-[#6BA94D]" size={32} />,
-      title: "Clear Direction",
-      description: "Replace uncertainty with a clear, shared understanding of where you're going and how you'll get there."
-    },
-    {
-      icon: <TrendingUp className="text-[#6BA94D]" size={32} />,
-      title: "Accelerated Growth",
-      description: "Focus resources on the highest-impact opportunities and eliminate activities that don't drive value."
-    },
-    {
-      icon: <Users className="text-[#6BA94D]" size={32} />,
-      title: "Aligned Organization",
-      description: "Get everyone rowing in the same direction with clarity on priorities and how individual roles contribute."
-    },
-    {
-      icon: <Lightbulb className="text-[#6BA94D]" size={32} />,
-      title: "Competitive Advantage",
-      description: "Identify and exploit opportunities that your competitors miss, creating sustainable differentiation."
-    }
-  ];
+const benefits: Benefit[] = [
+  {
+    image: "/images/strategy/clear-direction.jpg",
+    title: "Clear Direction",
+    description:
+      "Replace uncertainty with a clear, shared understanding of where you're going and how you'll get there."
+  },
+  {
+    image: "/images/strategy/growth.jpg",
+    title: "Accelerated Growth",
+    description:
+      "Focus resources on the highest-impact opportunities and eliminate activities that don't drive value."
+  },
+  {
+    image: "/images/strategy/alignment.jpg",
+    title: "Aligned Organization",
+    description:
+      "Get everyone rowing in the same direction with clarity on priorities and how individual roles contribute."
+  },
+  {
+    image: "/images/strategy/advantage.jpg",
+    title: "Competitive Advantage",
+    description:
+      "Identify and exploit opportunities that your competitors miss, creating sustainable differentiation."
+  }
+];
 
   const faqs = [
     {
@@ -170,28 +174,46 @@ const StrategicPlanning: React.FC = () => {
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Strategic Planning Matters
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              A well-crafted strategy provides the foundation for sustainable growth and competitive advantage.
+{/* Benefits Section */}
+<section className="py-16 bg-gray-50">
+  <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="text-center mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Why Strategic Planning Matters
+      </h2>
+      <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+        A well-crafted strategy provides the foundation for sustainable growth and competitive advantage.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {benefits.map((benefit, index) => (
+        <div
+          key={index}
+          className="bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow overflow-hidden"
+        >
+          <div className="overflow-hidden">
+            <img
+              src={benefit.image}
+              alt={benefit.title}
+              className="w-full h-40 object-cover"
+            />
+          </div>
+
+          <div className="p-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-3">
+              {benefit.title}
+            </h3>
+
+            <p className="text-gray-600">
+              {benefit.description}
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
-                <div className="mb-4">{benefit.icon}</div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{benefit.title}</h3>
-                <p className="text-gray-600">{benefit.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* Process Section */}
       <section id="process" className="py-16 bg-white">

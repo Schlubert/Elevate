@@ -5,12 +5,12 @@ import { getImagePath } from '../utils/paths';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0B6E4F] text-white py-12 mt-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+    <footer className="bg-[#0B6E4F] text-white py-3 mt-2 w-full">
+      <div className="w-full px-2 sm:px-3 lg:px-4">
+        <div className="grid md:grid-cols-4 gap-12 mb-3 max-w-7xl mx-auto">
           {/* Logo and Description */}
           <div className="md:col-span-1">
-            <Link to="/" className="inline-block mb-4">
+            <Link to="/" className="inline-block mb-1">
               <img 
                 src={getImagePath('elevate-logo2.png')} 
                 alt="Elevate Management Solutions" 
@@ -24,8 +24,8 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-bold text-white mb-4">Quick Links</h3>
-            <ul className="space-y-2">
+            <h3 className="font-bold text-white mb-1">Quick Links</h3>
+            <ul className="space-y-0">
               <li>
                 <Link to="/" className="text-gray-400 hover:text-[#6BA94D] transition-colors text-sm">
                   Home
@@ -51,8 +51,8 @@ const Footer: React.FC = () => {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold text-white mb-4">Services</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <h3 className="font-bold text-white mb-1">Services</h3>
+            <ul className="space-y-0 text-gray-400 text-sm">
               <li>Strategic Planning</li>
               <li>Operational Excellence</li>
               <li>Leadership Development</li>
@@ -62,8 +62,8 @@ const Footer: React.FC = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-bold text-white mb-4">Contact</h3>
-            <ul className="space-y-2 text-gray-400 text-sm">
+            <h3 className="font-bold text-white mb-1">Contact</h3>
+            <ul className="space-y-1 text-gray-400 text-sm">
               <li>Auckland, New Zealand</li>
               <li>
                 <a href="mailto:info@elevates.nz" className="hover:text-[#6BA94D] transition-colors">
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+        <div className="border-t border-gray-800 pt-1 text-center text-gray-400 text-sm max-w-7xl mx-auto">
           <p>&copy; {new Date().getFullYear()} Elevate Management Solutions. All rights reserved.</p>
         </div>
       </div>
