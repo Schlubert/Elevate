@@ -5,7 +5,7 @@ import { getImagePath } from '../utils/paths';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#0B6E4F] text-white py-3 mt-2 w-full">
+    <footer className="bg-[#0B6E4F] text-white py-3 mt-0.5 w-full">
       <div className="w-full px-2 sm:px-3 lg:px-4">
         <div className="grid md:grid-cols-4 gap-12 mb-3 max-w-7xl mx-auto">
           {/* Logo and Description */}

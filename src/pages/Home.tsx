@@ -199,7 +199,7 @@ const Home: React.FC = () => {
         </div>
  
         {/* EXPERIENCE THAT COUNTS - Light section with sectors */}
-        <div className="bg-white p-12 md:p-16 lg:col-span-2 flex flex-col justify-center">
+        <div className="bg-white p-12 md:p-16 lg:col-span-2 flex flex-col justify-top">
           <p className="text-sm uppercase tracking-wider text-gray-600 font-semibold mb-4">
             EXPERIENCE THAT COUNTS
           </p>
@@ -226,10 +226,10 @@ const Home: React.FC = () => {
         </div>
  
         {/* TESTIMONIAL - Right section */}
-        <div className="bg-elevate-darkgreen text-white p-12 md:p-16 lg:col-span-1 flex flex-col justify-center">
+        <div className="bg-elevate-darkgreen text-white p-12 md:p-16 lg:col-span-1 flex flex-col justify-top">
           <div className="text-6xl text-accent mb-6 font-serif">"</div>
           <p className="text-xl md:text-2xl font-serif leading-relaxed mb-8">
-            Elevates helped us cut through the noise and create a plan that our team could actually execute. The impact has been significant.
+            Elevate helped us cut through the noise and create a plan that our team could actually execute. The impact has been significant.
           </p>
           <div>
             <p className="font-bold text-lg text-accent">Chief Executive</p>
