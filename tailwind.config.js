@@ -19,7 +19,7 @@ module.exports = {
           700: "#0A6F31",
           800: "#084D24",
         },
-        accent: "#F28C2B",
+        accent: "#6BA94D",
         muted: {
           DEFAULT: "#6B7280",
         },

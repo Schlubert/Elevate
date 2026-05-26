@@ -1,7 +1,6 @@
 // App.tsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Header from "./src/components/Header";
 import Navbar from "./src/components/Navbar";
 
 // Pages
@@ -41,7 +40,7 @@ import ToolsAndTechniques from "./src/pages/approach/tools-and-techniques";
 function App() {
   return (
     <Router basename="/" future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
-      <Header />
+     
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

@@ -15,6 +15,7 @@ interface NavItem {
   subLinks?: SubLink[];
 }
 
+// 1. Removed Contact from here so it can be custom-rendered as a CTA button
 const NAV_LINKS: NavItem[] = [
   { href: '/', label: 'Home' },
   { 
@@ -24,7 +25,7 @@ const NAV_LINKS: NavItem[] = [
       { href: '/about/our-story', label: 'Our Story', description: 'The founding of Elevate' },
       { href: '/about/team', label: 'Leadership Team', description: 'Meet Kevin & Esther Gilbert' },
       { href: '/about/values', label: 'Our Values', description: 'What drives us' },
-          ]
+    ]
   },
   { 
     href: '/expertise', 
@@ -59,14 +60,12 @@ const NAV_LINKS: NavItem[] = [
       { href: '/approach/tools-and-techniques', label: 'Tools & Techniques', description: 'Our toolset' },
     ]
   },
-  
-  { href: '/contact', label: 'Contact' },
 ];
 
 const Logo: React.FC = () => (
   <div className="flex items-center">
     <img 
-      src={getImagePath('elevate-logo2.png')} 
+      src={getImagePath('elevate-logo-white.png')} 
       alt="Elevate Management Solutions" 
       className="h-16 w-auto"
     />
@@ -91,7 +90,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-[#0B6E4F] shadow-md sticky top-0 z-50">
       <nav className="container mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-8">
           <Link to="/" className="flex items-center flex-shrink-0">
@@ -112,7 +111,7 @@ const Navbar: React.FC = () => {
                     className={`flex items-center gap-1 px-3 py-2 text-base font-semibold transition-colors duration-300 ${
                       activeDropdown === link.label
                         ? 'text-[#0B6E4F]'
-                        : 'text-gray-700 hover:text-[#0B6E4F]'
+                        : 'text-white hover:text-[#6BA94D]'
                     }`}
                   >
                     {link.label}
@@ -125,19 +124,19 @@ const Navbar: React.FC = () => {
                   </button>
                 ) : (
                   <NavLink
-  to={link.href}
-  className={({ isActive }) =>
-    `flex items-center gap-1 px-3 py-2 text-base font-semibold transition-colors duration-300 ${
-      isActive || activeDropdown === link.label
-        ? 'text-[#0B6E4F]'
-        : 'text-gray-700 hover:text-[#0B6E4F]'
-    }`
-  }
->
-  {link.label}
-  <ChevronDown size={16} className={`transition-transform duration-200 ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
-</NavLink>
+                    to={link.href}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 px-3 py-2 text-base font-semibold transition-colors duration-300 ${
+                        isActive || activeDropdown === link.label
+                          ? 'text-[#0B6E4F]'
+                          : 'text-gray-700 hover:text-[#0B6E4F]'
+                      }`
+                    }
+                  >
+                    {link.label}
+                  </NavLink>
                 )}
+
                 {/* Dropdown Menu */}
                 {link.subLinks && activeDropdown === link.label && (
                   <div className="absolute top-full left-0 mt-0 w-72 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
@@ -163,6 +162,14 @@ const Navbar: React.FC = () => {
                 )}
               </div>
             ))}
+
+            {/* 2. Added your custom CTA Button here for Desktop Layout */}
+            <Link 
+              to="/contact" 
+              className="hidden md:inline-block bg-[#6BA94D] text-white px-4 py-1 rounded hover:bg-white hover:text-[#0B6E4F] border border-transparent hover:border-[#0B6E4F] transition-colors font-semibold"
+            >
+              Book a Consultation
+            </Link>
           </div>
 
           {/* Mobile menu button */}
@@ -226,6 +233,17 @@ const Navbar: React.FC = () => {
                 )}
               </div>
             ))}
+
+            {/* 3. Added CTA Button here for Mobile Drawer menu */}
+            <div className="px-3 pt-4">
+              <Link
+                to="/contact"
+                onClick={() => setIsMenuOpen(false)}
+                className="block text-center bg-[#6BA94D] text-white px-4 py-2 rounded hover:bg-[#0B6E4F] transition-colors font-semibold"
+              >
+                Book a Consultation
+              </Link>
+            </div>
           </div>
         )}
       </nav>
