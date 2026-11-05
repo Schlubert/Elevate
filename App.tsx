@@ -10,6 +10,7 @@ import Industries from "./src/pages/Industries";
 import Expertise from "./src/pages/Expertise";
 import HowWeOperate from "./src/pages/Operate";
 import CaseStudies from "./src/pages/CaseStudies";
+import Websites from "./src/pages/Websites";
 
 // About
 import OurStory from "./src/pages/about/our-story";
@@ -67,6 +68,7 @@ function App() {
         <Route path="/approach/methodologies" element={<Methodologies />} />
         <Route path="/approach/our-process" element={<OurProcess />} />
         <Route path="/approach/tools-and-techniques" element={<ToolsAndTechniques />} />
+        <Route path="/websites" element={<Websites />} />
       </Routes>
     </Router>
   );
