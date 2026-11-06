@@ -60,6 +60,7 @@ const NAV_LINKS: NavItem[] = [
       { href: '/approach/tools-and-techniques', label: 'Tools & Techniques', description: 'Our toolset' },
     ]
   },
+  { href: '/websites', label: 'Websites' },
 ];
 
 const Logo: React.FC = () => (
@@ -91,7 +92,7 @@ const Navbar: React.FC = () => {
 
   return (
     <header className="bg-[#0B6E4F] shadow-md sticky top-0 z-50">
-      <nav className="container mx-auto px-2 sm:px-6 lg:px-8">
+      <nav className="w-full max-w-[1200px] mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 gap-8">
           <Link to="/" className="flex items-center flex-shrink-0">
             <Logo />
@@ -100,68 +101,69 @@ const Navbar: React.FC = () => {
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center space-x-1 flex-grow justify-end">
             {NAV_LINKS.map((link) => (
-              <div
-                key={link.href}
-                className="relative"
-                onMouseEnter={() => link.subLinks && handleMouseEnter(link.label)}
-                onMouseLeave={handleMouseLeave}
-              >
-                {link.subLinks ? (
-                  <button
-                    className={`flex items-center gap-1 px-3 py-2 text-base font-semibold transition-colors duration-300 ${
-                      activeDropdown === link.label
-                        ? 'text-[#0B6E4F]'
-                        : 'text-white hover:text-[#6BA94D]'
-                    }`}
-                  >
-                    {link.label}
-                    <ChevronDown 
-                      size={16} 
-                      className={`transition-transform duration-200 ${
-                        activeDropdown === link.label ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                ) : (
-                  <NavLink
-                    to={link.href}
-                    className={({ isActive }) =>
-                      `flex items-center gap-1 px-3 py-2 text-base font-semibold transition-colors duration-300 ${
-                        isActive || activeDropdown === link.label
-                          ? 'text-[#0B6E4F]'
-                          : 'text-gray-700 hover:text-[#0B6E4F]'
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                )}
+  <div
+    key={link.href}
+    className="relative"
+    onMouseEnter={() => link.subLinks && handleMouseEnter(link.label)}
+    onMouseLeave={handleMouseLeave}
+  >
+    {link.subLinks ? (
+      <button
+        className={`flex items-center gap-1 px-3 py-2 text-base font-semibold text-white border-b-2 transition-colors duration-300 ${
+          activeDropdown === link.label
+            ? 'border-[#6BA94D]'
+            : 'border-transparent hover:border-[#6BA94D]'
+        }`}
+      >
+        {link.label}
+        <ChevronDown
+          size={16}
+          className={`transition-transform duration-200 ${
+            activeDropdown === link.label ? 'rotate-180' : ''
+          }`}
+        />
+      </button>
+    ) : (
+      <NavLink
+        to={link.href}
+        end={link.href === '/'}
+        className={({ isActive }) =>
+          `flex items-center gap-1 px-3 py-2 text-base font-semibold text-white border-b-6 transition-colors duration-300 ${
+            isActive
+              ? 'border-[#6BA94D]'
+              : 'border-transparent hover:border-[#6BA94D]'
+          }`
+        }
+      >
+        {link.label}
+      </NavLink>
+    )}
 
-                {/* Dropdown Menu */}
-                {link.subLinks && activeDropdown === link.label && (
-                  <div className="absolute top-full left-0 mt-0 w-72 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
-                    <div className="py-2">
-                      {link.subLinks.map((subLink) => (
-                        <Link
-                          key={subLink.href}
-                          to={subLink.href}
-                          className="block px-6 py-2 hover:bg-gray-50 transition-colors group"
-                        >
-                          <div className="font-semibold text-gray-900 group-hover:text-[#0B6E4F] transition-colors">
-                            {subLink.label}
-                          </div>
-                          {subLink.description && (
-                            <div className="text-sm text-gray-600 mt-1">
-                              {subLink.description}
-                            </div>
-                          )}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
+    {/* Dropdown Menu */}
+    {link.subLinks && activeDropdown === link.label && (
+      <div className="absolute top-full left-0 mt-0 w-72 bg-white shadow-xl rounded-lg overflow-hidden border border-gray-100">
+        <div className="py-2">
+          {link.subLinks.map((subLink) => (
+            <Link
+              key={subLink.href}
+              to={subLink.href}
+              className="block px-6 py-2 hover:bg-gray-50 transition-colors group"
+            >
+              <div className="font-semibold text-gray-900 group-hover:text-[#0B6E4F] transition-colors">
+                {subLink.label}
               </div>
-            ))}
+              {subLink.description && (
+                <div className="text-sm text-gray-600 mt-1">
+                  {subLink.description}
+                </div>
+              )}
+            </Link>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+))}
 
             {/* 2. Added your custom CTA Button here for Desktop Layout */}
             <Link 
@@ -174,78 +176,76 @@ const Navbar: React.FC = () => {
 
           {/* Mobile menu button */}
           <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden text-[#0B6E4F] focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+  onClick={() => setIsMenuOpen(!isMenuOpen)}
+  className="lg:hidden text-white focus:outline-none p-1"
+  aria-label="Toggle menu"
+>
+  {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+</button>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden pb-4 border-t border-gray-200">
-            {NAV_LINKS.map((link) => (
-              <div key={link.href} className="border-b border-gray-100">
-                {link.subLinks ? (
-                  <>
-                    <button
-                      onClick={() => toggleMobileItem(link.label)}
-                      className="w-full flex items-center justify-between px-3 py-3 text-base font-semibold text-gray-700 hover:bg-gray-50"
-                    >
-                      {link.label}
-                      <ChevronDown 
-                        size={20} 
-                        className={`transition-transform duration-200 ${
-                          mobileExpandedItem === link.label ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                    {mobileExpandedItem === link.label && (
-                      <div className="bg-gray-50 px-3 py-2">
-                        {link.subLinks.map((subLink) => (
-                          <Link
-                            key={subLink.href}
-                            to={subLink.href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="block px-3 py-2 text-sm text-gray-700 hover:text-[#0B6E4F] hover:bg-white rounded transition-colors"
-                          >
-                            {subLink.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <NavLink
-                    to={link.href}
+  <div className="lg:hidden pb-4 border-t border-white/20">
+    {NAV_LINKS.map((link) => (
+      <div key={link.href} className="border-b border-white/10">
+        {link.subLinks ? (
+          <>
+            <button
+              onClick={() => toggleMobileItem(link.label)}
+              className="w-full flex items-center justify-between px-3 py-3 text-base font-semibold text-white hover:bg-white/10"
+            >
+              {link.label}
+              <ChevronDown
+                size={20}
+                className={`transition-transform duration-200 ${
+                  mobileExpandedItem === link.label ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            {mobileExpandedItem === link.label && (
+              <div className="bg-black/10 px-3 py-2">
+                {link.subLinks.map((subLink) => (
+                  <Link
+                    key={subLink.href}
+                    to={subLink.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `block px-3 py-3 text-base font-semibold transition-colors ${
-                        isActive
-                          ? 'bg-[#6BA94D] text-white'
-                          : 'text-gray-700 hover:bg-gray-50'
-                      }`
-                    }
+                    className="block px-3 py-2 text-sm text-white hover:bg-white/10 rounded transition-colors"
                   >
-                    {link.label}
-                  </NavLink>
-                )}
+                    {subLink.label}
+                  </Link>
+                ))}
               </div>
-            ))}
-
-            {/* 3. Added CTA Button here for Mobile Drawer menu */}
-            <div className="px-3 pt-4">
-              <Link
-                to="/contact"
-                onClick={() => setIsMenuOpen(false)}
-                className="block text-center bg-[#6BA94D] text-white px-4 py-2 rounded hover:bg-[#0B6E4F] transition-colors font-semibold"
-              >
-                Book a Consultation
-              </Link>
-            </div>
-          </div>
+            )}
+          </>
+        ) : (
+          <NavLink
+            to={link.href}
+            end={link.href === '/'}
+            onClick={() => setIsMenuOpen(false)}
+            className={({ isActive }) =>
+              `block px-3 py-3 text-base font-semibold text-white transition-colors ${
+                isActive ? 'bg-[#6BA94D]' : 'hover:bg-white/10'
+              }`
+            }
+          >
+            {link.label}
+          </NavLink>
         )}
+      </div>
+    ))}
+
+    <div className="px-3 pt-4">
+      <Link
+        to="/contact"
+        onClick={() => setIsMenuOpen(false)}
+        className="block text-center bg-[#6BA94D] text-white px-4 py-2 rounded hover:bg-white hover:text-[#0B6E4F] transition-colors font-semibold"
+      >
+        Book a Consultation
+      </Link>
+    </div>
+  </div>
+)}
       </nav>
     </header>
   );

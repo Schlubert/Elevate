@@ -76,7 +76,7 @@ const Home: React.FC = () => {
             <img
               src={getImagePath('generic_consultation.jpg')}
               alt="Strategy in action"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain lg:object-cover"
             />
           </div>
           {/* Gradient fade from dark to transparent */}
