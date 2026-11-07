@@ -40,7 +40,7 @@ const Websites: React.FC = () => {
   const [activeTier, setActiveTier] = useState<Tier>("All");
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const heroShots = [
-  { src: "./public/images/elevateSplash.jpg", alt: "Multi-page business website example" },
+  { src: "/images/elevateSplash.jpg", alt: "Multi-page business website example" },
   { src: "./public/images/feedSplash.jpg", alt: "Business marketing website example" },
   { src: "./public/images/appetiteSplash.jpg", alt: "Advanced website with gateway example" },
   { src: "./public/images/swissSplash.jpg", alt: "Cultural website with regional event calendars" },

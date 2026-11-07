@@ -3,7 +3,7 @@ import React from "react";
 import Layout from "../components/Layout";
 import { Link } from "react-router-dom";
 import { Users, Compass, CheckSquare, Zap, TrendingUp, Building2, BarChart3, Users2 } from "lucide-react";
-import { getImagePath } from '@/utils/paths';
+import { getImagePath } from '../utils/paths';
 
 const Home: React.FC = () => {
   const steps = [
