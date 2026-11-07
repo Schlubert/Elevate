@@ -41,11 +41,11 @@ const Websites: React.FC = () => {
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const heroShots = [
   { src: "/images/elevateSplash.jpg", alt: "Multi-page business website example" },
-  { src: "./public/images/feedSplash.jpg", alt: "Business marketing website example" },
-  { src: "./public/images/appetiteSplash.jpg", alt: "Advanced website with gateway example" },
-  { src: "./public/images/swissSplash.jpg", alt: "Cultural website with regional event calendars" },
-  { src: "./public/images/bocuseSplash.jpg", alt: "Squarespace website example" },
-  { src: "./public/images/pgSplash.jpg", alt: "Basic site example" },
+  { src: "/images/feedSplash.jpg", alt: "Business marketing website example" },
+  { src: "/images/appetiteSplash.jpg", alt: "Advanced website with gateway example" },
+  { src: "/images/swissSplash.jpg", alt: "Cultural website with regional event calendars" },
+  { src: "/images/bocuseSplash.jpg", alt: "Squarespace website example" },
+  { src: "/images/pgSplash.jpg", alt: "Basic site example" },
  
 
 ];
@@ -82,7 +82,7 @@ const Websites: React.FC = () => {
       title: "Multi-page, business information site",
       tier: "Multi-page",
       platform: "React (Vite)",
-      image: "./public/images/elevateSplash.jpg",
+      image: "/images/elevateSplash.jpg",
       description:
         "A site driven by information. Designed to be explored by users, answer as many questions as possible, and still provide a great user experience. The site has pages easily categorised and organised. Services, team, news, and contact pages with plenty of room to cover most business needs.",
       attributes: [
@@ -96,7 +96,7 @@ const Websites: React.FC = () => {
       title: "Basic Business Profile Website",
       tier: "Basic",
       platform: "WordPress",
-      image: "./public/images/feedSplash.jpg",
+      image: "/images/feedSplash.jpg",
       description:
         "A simple site with room to grow. All the information is easily accessible, and the client can manage content through the WordPress dashboard. The site is structured to be search engine friendly, with a blog or news section to keep content fresh.",
       attributes: [
@@ -110,7 +110,7 @@ const Websites: React.FC = () => {
       title: "Multi-language site with a secured login area",
       tier: "Advanced",
       platform: "React (Vite)",
-      image: "./public/images/appetiteSplash.jpg",
+      image: "/images/appetiteSplash.jpg",
       description:
         "Designed for businesses reaching different groups of people in different places. An easy-to-use homepage guides visitors right where they need to go, while features like language switching, video, and private member areas make exploring the site simple and personal.",
       attributes: [
@@ -125,7 +125,7 @@ const Websites: React.FC = () => {
       title: "Brand-Led Basic Site",
       tier: "Basic",
       platform: "Squarespace",
-      image: "./public/images/bocuseSplash.jpg",
+      image: "/images/bocuseSplash.jpg",
       description:
         "A visually driven site for brands, makers, and small retailers. Squarespace gives you strong design templates and built-in tools for product listings, bookings, and newsletters. The client can manage content and products through the Squarespace dashboard, with no coding required.",
       attributes: [
@@ -139,7 +139,7 @@ const Websites: React.FC = () => {
       title: "Community and Cultural Website",
       tier: "Multi-page",
       platform: "Wordpress",
-      image: "./public/images/swissSplash.jpg",
+      image: "/images/swissSplash.jpg",
       description:
         "A site for a community organisation with regional, national, and international audiences. The homepage is designed to guide visitors to the right information, while the site structure allows for easy updates and additions with each region having control over their content. Features include event calendars, news posts, and the potential for both members only areas and language toggles.",
       attributes: [
@@ -153,7 +153,7 @@ const Websites: React.FC = () => {
       title: "Profile and marketing site for a small business",
       tier: "Multi-page",
       platform: "Wordpress",
-      image: "./public/images/pgSplash.jpg",
+      image: "/images/pgSplash.jpg",
       description:
         "A visually driven site for brands, makers, and small retailers. Squarespace gives you strong design templates and built-in tools for product listings, bookings, and newsletters. The client can manage content and products through the Squarespace dashboard, with no coding required.",
       attributes: [
