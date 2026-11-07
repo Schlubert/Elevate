@@ -94,7 +94,7 @@ const Hospitality: React.FC = () => {
 <section className="relative bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20 overflow-hidden">
   {/* Background image */}
   <img
-    src={getImagePath("industries/hospitality-hero.webp")}
+    src={getImagePath("images/industries/hospitality-hero.webp")}
     alt=""
     aria-hidden="true"
     className="absolute inset-0 w-full h-full object-cover"
