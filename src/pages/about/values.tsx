@@ -3,6 +3,7 @@ import React from "react";
 import Layout from "../../components/Layout";
 import { Heart, Shield, Users, Compass, Lightbulb, Handshake, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getImagePath } from "../../utils/paths";
 
 interface Value {
   icon: React.ReactNode;
@@ -96,22 +97,32 @@ const Values: React.FC = () => {
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              About Us
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Our Values
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-100 leading-relaxed">
-              The principles that guide how we work, make decisions, and show up for the people and organisations we serve.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* Hero Section */}
+<section className="relative bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20 overflow-hidden">
+  {/* Background image */}
+  <img
+    src={getImagePath("about/values-hero.webp")}
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  {/* Dark green overlay for readability (centred layout, so a uniform tint) */}
+  <div className="absolute inset-0 bg-[#0B6E4F]/80" />
+
+  <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-4xl mx-auto text-center">
+      <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        About Us
+      </div>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Our Values
+      </h1>
+      <p className="text-xl md:text-2xl text-gray-100 leading-relaxed">
+        The principles that guide how we work, make decisions, and show up for the people and organisations we serve.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Introduction Section */}
       <section className="py-16 bg-white">
