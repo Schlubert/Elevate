@@ -23,7 +23,7 @@ const NAV_LINKS: NavItem[] = [
     label: 'About Us',
     subLinks: [
       { href: '/about/our-story', label: 'Our Story', description: 'The founding of Elevate' },
-      { href: '/about/team', label: 'Leadership Team', description: 'Meet Kevin & Esther Gilbert' },
+      { href: '/about/team', label: 'Our Team', description: 'Meet Kevin & Esther Gilbert' },
       { href: '/about/values', label: 'Our Values', description: 'What drives us' },
     ]
   },

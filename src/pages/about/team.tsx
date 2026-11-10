@@ -96,28 +96,38 @@ const TeamPage: React.FC = () => {
   return (
     <Layout>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              About Us
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Leadership Team
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-4 leading-relaxed">
-              Two people. Decades of experience. One complementary partnership.
-            </p>
-            <p className="text-lg text-gray-200 max-w-3xl leading-relaxed">
-              Kevin and Esther Gilbert founded Elevate on a simple premise: that
-              the best consulting comes from people who have actually run things
-              — who know what a payroll crisis feels like at 11pm, what it means
-              to lead a team through uncertainty, and what separates a strategy
-              that works from one that just looks good on paper.
-            </p>
-          </div>
-        </div>
-      </section>
+<section className="relative bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20 overflow-hidden">
+  {/* Background image */}
+  <img
+    src={getImagePath("about/team-hero.webp")}
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  {/* Dark green overlay for readability */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0B6E4F]/95 via-[#0B6E4F]/80 to-[#0B6E4F]/50" />
+
+  <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-4xl">
+      <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        About Us
+      </div>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Our Team
+      </h1>
+      <p className="text-xl md:text-2xl text-gray-100 mb-4 leading-relaxed">
+        Two people. Decades of experience. One complementary partnership.
+      </p>
+      <p className="text-lg text-gray-200 max-w-3xl leading-relaxed">
+        Kevin and Esther Gilbert founded Elevate on a simple premise: that
+        the best consulting comes from people who have actually run things
+        — who know what a payroll crisis feels like at 11pm, what it means
+        to lead a team through uncertainty, and what separates a strategy
+        that works from one that just looks good on paper.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Team Members */}
       {team.map((member, index) => (
