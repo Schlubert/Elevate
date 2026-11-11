@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Layout from "../../components/Layout";
 import { Target, TrendingUp, Users, Zap, CheckCircle, ArrowRight, ChevronDown, ChevronUp, Compass, Lightbulb } from "lucide-react";
 import { Link } from "react-router-dom";
+import { getImagePath } from "../../utils/paths";
 
 interface Methodology {
   icon: React.ReactNode;
@@ -104,29 +105,39 @@ const Methodologies: React.FC = () => {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              How We Work
-            </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              Our Methodologies
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
-              We draw on proven frameworks and methodologies—but we're pragmatic, not purists. We adapt approaches to fit your organisation, not force-fit your business into rigid frameworks.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Link to="/contact" className="bg-white text-[#0B6E4F] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center gap-2">
-                Start a Conversation <ArrowRight size={20} />
-              </Link>
-              <Link to="/approach/our-process" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0B6E4F] transition-colors inline-flex items-center justify-center">
-                Our Process
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+<section className="relative bg-gradient-to-br from-[#0B6E4F] to-[#6BA94D] text-white py-20 overflow-hidden">
+  {/* Background image */}
+  <img
+    src={getImagePath("process/methods-hero.webp")}
+    alt=""
+    aria-hidden="true"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+  {/* Dark green overlay for readability */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#0B6E4F]/95 via-[#0B6E4F]/80 to-[#0B6E4F]/50" />
+
+  <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="max-w-4xl">
+      <div className="inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        How We Work
+      </div>
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+        Our Methodologies
+      </h1>
+      <p className="text-xl md:text-2xl text-gray-100 mb-8 leading-relaxed">
+        We draw on proven frameworks and methodologies—but we're pragmatic, not purists. We adapt approaches to fit your organisation, not force-fit your business into rigid frameworks.
+      </p>
+      <div className="flex flex-col sm:flex-row gap-4">
+        <Link to="/contact" className="bg-white text-[#0B6E4F] px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center justify-center gap-2">
+          Start a Conversation <ArrowRight size={20} />
+        </Link>
+        <Link to="/approach/our-process" className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-[#0B6E4F] transition-colors inline-flex items-center justify-center">
+          Our Process
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Philosophy Section */}
       <section className="py-16 bg-white">
@@ -281,7 +292,7 @@ const Methodologies: React.FC = () => {
             </p>
             <div className="grid md:grid-cols-2 gap-6 text-left">
               {[
-                "We understand the principles behind methodologies deeply",
+                "We understand the principles behind the methodologies",
                 "We know when to follow the framework and when to adapt",
                 "We combine approaches when it serves you better",
                 "We focus on outcomes, not methodology compliance",

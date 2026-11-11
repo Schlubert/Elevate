@@ -226,7 +226,7 @@ const TeamPage: React.FC = () => {
           </section>
 
           {index < team.length - 1 && (
-            <div className="h-1 bg-gradient-to-r from-[#0B6E4F] to-[#6BA94D]" />
+            <div className="h-1 " />
           )}
         </div>
       ))}

@@ -25,7 +25,7 @@ const StrategicPlanning: React.FC = () => {
     {
       number: "01",
       title: "Discovery & Assessment",
-      description: "We start by deeply understanding your organization, market position, and strategic challenges through stakeholder interviews, data analysis, and environmental scanning.",
+      description: "We start by getting to know your organization, market position, challenges, and strategic direction through data analysis and, where possible, time spent on-site.",
       deliverables: ["Current state assessment", "Stakeholder alignment sessions", "Market & competitive analysis", "SWOT analysis"]
     },
     {
